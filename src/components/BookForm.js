@@ -49,7 +49,7 @@ const BookForm = (props) => {
           </select>
         </div>
 
-        <button type="submit" className="submit-btn border-2 border-black px-5 py-1 w-[20%]">ADD BOOK</button>
+        <button type="submit" className="submit-btn border-2 border-black px-5 py-3 w-[20%]">ADD BOOK</button>
       </form>
     </div>
   );
