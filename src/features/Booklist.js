@@ -37,15 +37,18 @@ const Booklist = () => {
   };
 
   return (
-    <section id="book-list" className="flex items-center flex-col w-full gap-y-4">
-      {
+    <>
+      <section id="book-list" className="flex items-center flex-col w-full gap-y-4 max-h-[500px] overflow-y-auto">
+        {
       books.length && (
         books.map((book) => <BookItem key={book.id} book={book} />)
       )
     }
 
+      </section>
       <BookForm addNewBook={addNewBook} />
-    </section>
+    </>
+
   );
 };
 
