@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import BookItem from '../components/BookItem';
+import { BookItem, BookForm } from '../components';
 
 const allBooks = [
   {
@@ -39,6 +39,8 @@ const Booklist = () => {
         books.map((book) => <BookItem key={book.id} book={book} />)
       )
     }
+
+      <BookForm />
     </section>
   );
 };
