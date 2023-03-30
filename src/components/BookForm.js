@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { newBookPropType } from '../model/Book.types';
 import Book from '../model/Book.model';
