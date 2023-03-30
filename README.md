@@ -139,7 +139,7 @@ If you like this project please give me a star⭐
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank...
+I would like to thank [LogRocket](https://blog.logrocket.com/react-router-dom-tutorial-examples/) for tutorials on React Router DOM v5
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
