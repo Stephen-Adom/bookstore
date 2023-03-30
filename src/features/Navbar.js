@@ -7,10 +7,10 @@ const Navbar = () => (
       <Link className="navbar-brand text-[1.5rem]" to="/">Bookstore CMS</Link>
       <ul className="navbar-nav me-auto flex items-center ml-[50px] gap-3">
         <li className="nav-item">
-          <NavLink className="nav-link active" aria-current="page" to="/">BOOKS</NavLink>
+          <NavLink className="nav-link text-gray-500" aria-current="page" to="/">BOOKS</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="categories">CATEGORIES</NavLink>
+          <NavLink className="nav-link text-gray-500" to="categories">CATEGORIES</NavLink>
         </li>
       </ul>
     </div>
