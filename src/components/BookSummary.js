@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { bookPropType } from '../model/Book.types';
 
 const BookSummary = (props) => {
   const { book } = props;
@@ -17,15 +17,6 @@ const BookSummary = (props) => {
   );
 };
 
-BookSummary.propTypes = {
-  book: PropTypes.shape({
-    id: PropTypes.number,
-    title: PropTypes.string,
-    category: PropTypes.string,
-    author: PropTypes.string,
-    completed: PropTypes.string,
-    current_chapter: PropTypes.string,
-  }).isRequired,
-};
+BookSummary.propTypes = { ...bookPropType };
 
 export default BookSummary;

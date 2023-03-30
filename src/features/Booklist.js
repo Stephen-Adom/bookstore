@@ -32,6 +32,10 @@ const allBooks = [
 const Booklist = () => {
   const [books, setBooks] = useState(allBooks);
 
+  const addNewBook = (book) => {
+    setBooks((prevState) => [...prevState, book]);
+  };
+
   return (
     <section id="book-list" className="flex items-center flex-col w-full gap-y-4">
       {
@@ -40,7 +44,7 @@ const Booklist = () => {
       )
     }
 
-      <BookForm />
+      <BookForm addNewBook={addNewBook} />
     </section>
   );
 };
