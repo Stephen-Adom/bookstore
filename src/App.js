@@ -6,7 +6,9 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Outlet />
+      <section className="w-[80%] mx-auto">
+        <Outlet />
+      </section>
     </div>
   );
 }
