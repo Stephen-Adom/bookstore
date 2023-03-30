@@ -24,8 +24,6 @@ body {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-@layer components {
-  .nav-link.active {
-    @apply text-black font-semibold;
-  }
+.nav-link.active {
+  @apply text-black font-semibold;
 }
