@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchBooks, addBooksToStore } from './thunks';
+import { fetchBooks, addBooksToStore, deleteBook } from './bookThunks';
 import Book from '../../model/Book.model';
 
 const formatBooks = (books) => Object.keys(books).map((key) => {
@@ -21,15 +21,6 @@ const initialState = {
 const bookSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    addBook: (state, action) => {
-      state.books = [...state.books, action.payload];
-    },
-    removeBook: (state, action) => {
-      const filteredBooks = state.books.filter((book) => book.id !== action.payload);
-      state.books = [...filteredBooks];
-    },
-  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchBooks.pending, (state) => {
@@ -52,6 +43,17 @@ const bookSlice = createSlice({
         state.error = null;
       })
       .addCase(addBooksToStore.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(deleteBook.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(deleteBook.fulfilled, (state) => {
+        state.loading = false;
+        state.error = null;
+      })
+      .addCase(deleteBook.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });

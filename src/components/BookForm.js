@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Book from '../model/Book.model';
-import { addBooksToStore, fetchBooks } from '../redux/books/thunks';
+import { addBooksToStore, fetchBooks } from '../redux/books/bookThunks';
 
 const defaultBookValues = {
   title: '',

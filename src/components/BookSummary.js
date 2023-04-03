@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { bookPropType } from '../model/Book.types';
-import { removeBook } from '../redux/books/bookSlice';
+import { deleteBook, fetchBooks } from '../redux/books/bookThunks';
 
 const BookSummary = (props) => {
   const { book } = props;
@@ -14,7 +14,17 @@ const BookSummary = (props) => {
       <p className="text-sm text-gray-400">{book.author}</p>
       <div className="flex items-center gap-3 mt-3 book-actions">
         <button type="button">Comments</button>
-        <button type="button" onClick={() => dispatch(removeBook(book.id))}>Remove</button>
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(deleteBook(book.id)).then(() => {
+              dispatch(fetchBooks());
+            });
+          }}
+        >
+          Remove
+
+        </button>
         <button type="button">Edit</button>
       </div>
     </div>

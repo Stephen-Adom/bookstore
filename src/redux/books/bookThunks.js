@@ -15,4 +15,13 @@ const addBooksToStore = createAsyncThunk('books/addBooks', async (book, { reject
   }
 });
 
-export { addBooksToStore, fetchBooks };
+const deleteBook = createAsyncThunk('books/deleteBookFromDB', async (itemId, { rejectWithValue, fulfillWithValue }) => {
+  try {
+    const response = await axios.delete(`${API_BASE}/${KEY}/books/${itemId}`);
+    return fulfillWithValue(response);
+  } catch (error) {
+    return rejectWithValue(error.response.data.error);
+  }
+});
+
+export { addBooksToStore, fetchBooks, deleteBook };

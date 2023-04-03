@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { BookItem, BookForm } from '../components';
-import { fetchBooks } from '../redux/books/thunks';
+import { fetchBooks } from '../redux/books/bookThunks';
 
 const Booklist = () => {
   const [AllBooks, setAllBooks] = useState([]);
