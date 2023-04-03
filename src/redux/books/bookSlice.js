@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import fetchBooks from './thunks';
 
 const initialState = {
   books: [
@@ -27,6 +28,8 @@ const initialState = {
       currentChapter: 'Introduction',
     },
   ],
+  loading: false,
+  error: null,
 };
 
 const bookSlice = createSlice({
@@ -40,6 +43,20 @@ const bookSlice = createSlice({
       const filteredBooks = state.books.filter((book) => book.id !== action.payload);
       state.books = [...filteredBooks];
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchBooks.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(fetchBooks.fulfilled, (state, action) => {
+      state.loading = false;
+      state.error = null;
+      state.books = action.payload;
+    });
+    builder.addCase(fetchBooks.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    });
   },
 });
 

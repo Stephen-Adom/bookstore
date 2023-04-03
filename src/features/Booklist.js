@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { BookItem, BookForm } from '../components';
+import fetchBooks from '../redux/books/thunks';
 
 const Booklist = () => {
   const [AllBooks, setAllBooks] = useState([]);
   const { books } = useSelector((state) => state.books);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setAllBooks(books);
   }, [books]);
+
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch]);
 
   return (
     <>
