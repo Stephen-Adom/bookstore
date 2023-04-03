@@ -7,9 +7,7 @@ const Booklist = () => {
   const { books } = useSelector((state) => state.books);
 
   useEffect(() => {
-    if (books.length) {
-      setAllBooks(books);
-    }
+    setAllBooks(books);
   }, [books]);
 
   return (

@@ -43,7 +43,7 @@ const BookForm = () => {
 
         <div className="form-group w-[25%]">
           <select className="form-control" defaultValue="" id="author" name="author" onChange={(e) => handleChange(e)} required>
-            <option value="">Author</option>
+            <option value="">Select Author</option>
             <option value="Suzanne Collins">Suzanne Collins</option>
             <option value="Frank Herbert">Frank Herbert</option>
           </select>
