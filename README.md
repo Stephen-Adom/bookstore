@@ -38,6 +38,7 @@ A bookstore web application is a web application that allows you manage book inv
 
 - **ReactJS**
 - **Tailwind CSS**
+- **Redux-Toolkit**
 - **CSS 3**
 
 <!-- Features -->
