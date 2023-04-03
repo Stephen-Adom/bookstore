@@ -42,11 +42,7 @@ const BookForm = () => {
         </div>
 
         <div className="form-group w-[25%]">
-          <select className="form-control" defaultValue="" id="author" name="author" onChange={(e) => handleChange(e)} required>
-            <option value="">Select Author</option>
-            <option value="Suzanne Collins">Suzanne Collins</option>
-            <option value="Frank Herbert">Frank Herbert</option>
-          </select>
+          <input type="text" className="form-control" id="author" name="author" placeholder="Author" onChange={(e) => handleChange(e)} required />
         </div>
 
         <button type="submit" className="submit-btn border-2 border-black px-5 py-3 w-[20%]">ADD BOOK</button>
