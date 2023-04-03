@@ -19,6 +19,7 @@
     "import/no-extraneous-dependencies": "off",
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
+    "no-param-reassign": "off",
     "import/no-cycle": "off",
     "no-shadow": "off"
   },

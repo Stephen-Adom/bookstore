@@ -1,51 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { BookItem, BookForm } from '../components';
 
-const allBooks = [
-  {
-    id: 1,
-    title: 'The Hunger Games',
-    category: 'Action',
-    author: 'Suzanne Collins',
-    completed: '64%',
-    current_chapter: 'Chapter 17',
-  },
-  {
-    id: 2,
-    title: 'Dune',
-    category: 'Action',
-    author: 'Frank Herbert',
-    completed: '8%',
-    current_chapter: 'Chapter 3: *A Lesson Learned*',
-  },
-  {
-    id: 3,
-    title: 'Capital in the Twenty-First Century',
-    category: 'Economy',
-    author: 'Suzanne Collins',
-    completed: '0%',
-    current_chapter: 'Introduction',
-  },
-];
-
 const Booklist = () => {
-  const [books, setBooks] = useState(allBooks);
+  const [AllBooks, setAllBooks] = useState([]);
+  const { books } = useSelector((state) => state.books);
 
-  const addNewBook = (book) => {
-    setBooks((prevState) => [...prevState, book]);
-  };
+  useEffect(() => {
+    setAllBooks(books);
+  }, [books]);
 
   return (
     <>
       <section id="book-list" className="flex items-center flex-col w-full gap-y-4 max-h-[600px] overflow-y-auto px-3 py-2">
         {
-      books.length && (
-        books.map((book) => <BookItem key={book.id} book={book} />)
-      )
+          AllBooks.length ? (
+            AllBooks.map((book) => <BookItem key={book.id} book={book} />)
+          ) : <h2 className="font-bold">No Book Available!</h2>
     }
 
       </section>
-      <BookForm addNewBook={addNewBook} />
+      <BookForm />
     </>
 
   );
