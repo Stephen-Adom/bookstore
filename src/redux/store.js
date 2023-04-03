@@ -7,6 +7,9 @@ const store = configureStore({
     books: bookSlice,
     categories: categoriesSlice,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: false,
+  }),
 });
 
 export default store;

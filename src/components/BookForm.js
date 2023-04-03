@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import { newBookPropType } from '../model/Book.types';
+import { useDispatch } from 'react-redux';
 import Book from '../model/Book.model';
+import { addBook } from '../redux/books/bookSlice';
 
 const defaultBookValues = {
   title: '',
   author: '',
 };
 
-const BookForm = (props) => {
+const BookForm = () => {
   const [bookForm, setBookForm] = useState(defaultBookValues);
-  const { addNewBook } = props;
+  const dispatch = useDispatch();
 
   const resetForm = (e) => {
     setBookForm(defaultBookValues);
@@ -27,13 +28,13 @@ const BookForm = (props) => {
     e.preventDefault();
     if (bookForm.title && bookForm.author) {
       const newBook = new Book(bookForm.title, bookForm.author);
-      addNewBook(newBook);
+      dispatch(addBook(newBook));
       resetForm(e);
     }
   };
 
   return (
-    <div className="book-form w-full mt-5">
+    <div className="w-full mt-5 book-form">
       <h1 className="text-lg">ADD NEW BOOK</h1>
       <form onSubmit={submitNewBook} className="flex items-center justify-between gap-x-5">
         <div className="form-group w-[55%]">
@@ -53,7 +54,5 @@ const BookForm = (props) => {
     </div>
   );
 };
-
-BookForm.propTypes = { ...newBookPropType };
 
 export default BookForm;
