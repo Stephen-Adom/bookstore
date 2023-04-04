@@ -22,7 +22,7 @@ body {
   background-color: #fff;
   border: 1px solid rgb(230, 230, 230);
   border-radius: 0.375rem;
-  height: 50px;
+  height: 60px;
   outline: none;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
