@@ -1,45 +1,62 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { fetchBooks, addBooksToStore, deleteBook } from './bookThunks';
+import Book from '../../model/Book.model';
+
+const formatBooks = (books) => Object.keys(books).map((key) => {
+  const newBook = new Book(
+    key,
+    books[key][0].title,
+    books[key][0].author,
+    books[key][0].category,
+  );
+  return newBook;
+});
 
 const initialState = {
-  books: [
-    {
-      id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-      completed: '0%',
-      currentChapter: 'Introduction',
-    },
-    {
-      id: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-      completed: '0%',
-      currentChapter: 'Introduction',
-    },
-    {
-      id: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-      completed: '0%',
-      currentChapter: 'Introduction',
-    },
-  ],
+  books: [],
+  loading: false,
+  error: null,
 };
 
 const bookSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    addBook: (state, action) => {
-      state.books = [...state.books, action.payload];
-    },
-    removeBook: (state, action) => {
-      const filteredBooks = state.books.filter((book) => book.id !== action.payload);
-      state.books = [...filteredBooks];
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchBooks.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchBooks.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.books = formatBooks(action.payload.data);
+      })
+      .addCase(fetchBooks.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(addBooksToStore.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(addBooksToStore.fulfilled, (state) => {
+        state.loading = false;
+        state.error = null;
+      })
+      .addCase(addBooksToStore.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(deleteBook.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(deleteBook.fulfilled, (state) => {
+        state.loading = false;
+        state.error = null;
+      })
+      .addCase(deleteBook.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      });
   },
 });
 
