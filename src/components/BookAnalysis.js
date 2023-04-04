@@ -7,13 +7,13 @@ const BookAnalysis = (props) => {
   return (
     <div className="book-analysis flex items-center justify-between w-full lg:w-[50%] mt-3">
       <div>
-        <h1 className="text-2xl">{book.completed}</h1>
-        <p>Completed</p>
+        <h1 className="text-4xl font-light">{book.completed}</h1>
+        <p className="font-light text-gray-400">Completed</p>
       </div>
       <div className="flex flex-col gap-y-2 w-[60%] text-center md:text-left">
-        <p className="text-gray-500">CURRENT CHAPTER</p>
-        <p>{book.current_chapter}</p>
-        <button type="button" className="px-3 py-1 border-2">UPDATE PROGRESS</button>
+        <p className="text-gray-400">CURRENT CHAPTER</p>
+        <p className="font-light">{book.current_chapter}</p>
+        <button type="button" className="px-3 py-1 text-white border-2 bg-primaryBlue border-primaryBlue">UPDATE PROGRESS</button>
       </div>
     </div>
   );
