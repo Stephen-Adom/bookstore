@@ -8,14 +8,15 @@ const BookSummary = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex flex-col book-info">
+    <div className="flex flex-col book-info w-full lg:w-[50%]">
       <p className="category">{book.category}</p>
       <h1 className="text-xl font-bold">{book.title}</h1>
-      <p className="text-sm text-gray-400">{book.author}</p>
-      <div className="flex items-center gap-3 mt-3 book-actions">
-        <button type="button">Comments</button>
+      <p className="text-sm font-light tracking-wide text-paleBlue">{book.author}</p>
+      <div className="flex items-center gap-3 mt-3 divide-x-2 book-actions">
+        <button type="button" className="text-paleBlue">Comments</button>
         <button
           type="button"
+          className="px-4 text-paleBlue"
           onClick={() => {
             dispatch(deleteBook(book.id)).then(() => {
               dispatch(fetchBooks());
@@ -25,7 +26,7 @@ const BookSummary = (props) => {
           Remove
 
         </button>
-        <button type="button">Edit</button>
+        <button type="button" className="px-4 text-paleBlue">Edit</button>
       </div>
     </div>
   );
