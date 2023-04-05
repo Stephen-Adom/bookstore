@@ -18,9 +18,9 @@ const BookAnalysis = (props) => {
         </div>
       </div>
       <div className="flex flex-col gap-y-2 w-[60%] text-center md:text-left">
-        <p className="text-gray-400">CURRENT CHAPTER</p>
+        <p className="text-gray-400 text-[0.813rem]">CURRENT CHAPTER</p>
         <p className="font-light">{book.current_chapter}</p>
-        <button type="button" className="w-full lg:w-[80%] mt-1 lg:mt-4 font-light px-3 py-1 text-white border-2 bg-primaryBlue border-primaryBlue hover:bg-blue-700 hover:border-blue-700 text-sm">UPDATE PROGRESS</button>
+        <button type="button" className="update-progress-btn">UPDATE PROGRESS</button>
       </div>
     </div>
   );

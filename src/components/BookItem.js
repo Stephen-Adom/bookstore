@@ -7,7 +7,7 @@ const BookItem = (props) => {
   const { book } = props;
 
   return (
-    <section id="book-item" className="flex flex-col items-center justify-between w-full p-4 border-2 sm:flex-col md:flex-row">
+    <section id="book-item" className="flex flex-col items-center justify-between w-full p-4 bg-white border-2 sm:flex-col md:flex-row">
       <BookSummary book={book} />
       <BookAnalysis book={book} />
     </section>
