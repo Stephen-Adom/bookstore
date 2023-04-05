@@ -15,7 +15,7 @@ const BookSummary = (props) => {
     <>
       <Toast ref={toastRef} />
       <div className="flex flex-col book-info w-full lg:w-[50%]">
-        <p className="font-bold text-gray-400 category font-sm">{book.category}</p>
+        <p className="text-sm font-bold text-gray-400 category">{book.category}</p>
         <h1 className="text-xl font-bold">{book.title}</h1>
         <p className="text-sm font-light tracking-wide text-paleBlue">{book.author}</p>
         <div className="flex items-center gap-3 mt-3 divide-x-2 book-actions">

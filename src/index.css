@@ -31,6 +31,10 @@ body {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.nav-link {
+  @apply text-sm;
+}
+
 .nav-link.active {
   @apply tracking-widest text-black;
 }
