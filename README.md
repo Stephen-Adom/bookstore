@@ -1,11 +1,5 @@
 <a name="readme-top"></a>
 
-<div align="center">
-
-  <h1><b>Bookstore CMS</b></h1>
-
-</div>
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
