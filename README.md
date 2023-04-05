@@ -57,7 +57,7 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
 
 ```sh
- npm install node
+ npm install Node.js
 ```
 
 ### Setup
@@ -65,7 +65,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  cd my-folder
+  cd bookstore
   git clone git@github.com/Stephen-Adom/bookstore.git
 ```
 
@@ -76,7 +76,7 @@ Install this project with:
 Example command:
 
 ```sh
-  cd my-project
+  cd bookstore
   npm install
 ```
 
