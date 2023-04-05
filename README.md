@@ -54,10 +54,10 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+In order to run this project you need to install Node.js:
 
 ```sh
- npm install Node.js
+ Node.js
 ```
 
 ### Setup
@@ -65,18 +65,17 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  cd bookstore
   git clone git@github.com/Stephen-Adom/bookstore.git
+  cd bookstore
 ```
 
 ### Install
 
-Install this project with:
+Install this project with npm:
 
 Example command:
 
 ```sh
-  cd bookstore
   npm install
 ```
 
