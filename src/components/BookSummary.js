@@ -15,14 +15,14 @@ const BookSummary = (props) => {
     <>
       <Toast ref={toastRef} />
       <div className="flex flex-col book-info w-full lg:w-[50%]">
-        <p className="text-sm font-bold text-gray-400 category">{book.category}</p>
-        <h1 className="text-xl font-bold">{book.title}</h1>
-        <p className="text-sm font-light tracking-wide text-paleBlue">{book.author}</p>
+        <p className="text-[0.875rem] font-bold text-gray-400 category font-montserrat">{book.category}</p>
+        <h1 className="text-[1.375rem] font-bold font-roboto">{book.title}</h1>
+        <p className="text-[0.875rem] font-light tracking-wide text-paleBlue font-roboto">{book.author}</p>
         <div className="flex items-center gap-3 mt-3 divide-x-2 book-actions">
-          <button type="button" className="text-paleBlue">Comments</button>
+          <button type="button" className="text-paleBlue text-[0.875rem]">Comments</button>
           <button
             type="button"
-            className="px-4 text-paleBlue"
+            className="px-4 text-paleBlue text-[0.875rem]"
             onClick={() => {
               dispatch(deleteBook(book.id)).then(() => {
                 showToast('info', 'Remove Book', `${book.title} removed`);
@@ -33,7 +33,7 @@ const BookSummary = (props) => {
             Remove
 
           </button>
-          <button type="button" className="px-4 text-paleBlue">Edit</button>
+          <button type="button" className="px-4 text-paleBlue text-[0.875rem]">Edit</button>
         </div>
       </div>
     </>

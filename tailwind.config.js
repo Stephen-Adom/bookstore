@@ -9,6 +9,10 @@ module.exports = {
         primaryBlue: '#0290ff',
         paleBlue: '#4386bf',
       },
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+        roboto: ['Roboto Slab', 'serif'],
+      },
     },
   },
   plugins: [],
