@@ -133,8 +133,8 @@ If you like this project please give me a star⭐
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank [LogRocket](https://blog.logrocket.com/react-router-dom-tutorial-examples/) for tutorials on React Router DOM v5.
-I would also like to extend my appreciation to [Microverse](https://www.microverse.org/) for providing the project and [Zepline](https://app.zeplin.io/project/5b35a9e13227086040f8eb75/screen/5b695e29bb8c844f118f9378) for providing the project template.
+- I would like to thank [LogRocket](https://blog.logrocket.com/react-router-dom-tutorial-examples/) for tutorials on React Router DOM v5.
+- I would also like to extend my appreciation to [Microverse](https://www.microverse.org/) for providing the project and [Zepline](https://app.zeplin.io/project/5b35a9e13227086040f8eb75/screen/5b695e29bb8c844f118f9378) for providing the project template.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
