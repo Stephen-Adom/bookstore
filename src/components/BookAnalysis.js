@@ -7,7 +7,7 @@ const BookAnalysis = (props) => {
   const [percentage] = useState(66);
 
   return (
-    <div className="book-analysis flex items-center justify-between w-full lg:w-[50%] mt-3 gap-x-4 divide-x-2">
+    <div className="book-analysis flex items-center justify-between w-full lg:w-[50%] mt-3 gap-x-4 divide-x">
       <div className="flex flex-col items-center md:flex-row gap-x-4">
         <div className="w-[50px] h-[50px] lg:w-[80px] lg:h-[80px]">
           <CircularProgressbar value={percentage} styles={buildStyles({ backgroundColor: '#0290ff' })} />
