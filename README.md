@@ -1,11 +1,5 @@
 <a name="readme-top"></a>
 
-<div align="center">
-
-  <h1><b>Bookstore CMS</b></h1>
-
-</div>
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -60,10 +54,10 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+In order to run this project you need to install Node.js:
 
 ```sh
- npm install node
+ Node.js
 ```
 
 ### Setup
@@ -71,18 +65,17 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  cd my-folder
   git clone git@github.com/Stephen-Adom/bookstore.git
+  cd bookstore
 ```
 
 ### Install
 
-Install this project with:
+Install this project with npm:
 
 Example command:
 
 ```sh
-  cd my-project
   npm install
 ```
 
@@ -140,7 +133,8 @@ If you like this project please give me a star⭐
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank [LogRocket](https://blog.logrocket.com/react-router-dom-tutorial-examples/) for tutorials on React Router DOM v5
+- I would like to thank [LogRocket](https://blog.logrocket.com/react-router-dom-tutorial-examples/) for tutorials on React Router DOM v5.
+- I would also like to extend my appreciation to [Microverse](https://www.microverse.org/) for providing the project and [Zepline](https://app.zeplin.io/project/5b35a9e13227086040f8eb75/screen/5b695e29bb8c844f118f9378) for providing the project template.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

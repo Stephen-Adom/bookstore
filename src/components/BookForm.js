@@ -1,8 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useRef, useEffect } from 'react';
+import { Toast } from 'primereact/toast';
 import { useDispatch, useSelector } from 'react-redux';
 import Book from '../model/Book.model';
 import { addBooksToStore, fetchBooks } from '../redux/books/bookThunks';
+import useToast from '../hooks/useToast';
 
 const defaultBookValues = {
   title: '',
@@ -11,11 +13,10 @@ const defaultBookValues = {
 
 const BookForm = () => {
   const [bookForm, setBookForm] = useState(defaultBookValues);
+  const toastRef = useRef(null);
   const { error } = useSelector((state) => state.books);
-  const [showError, setShowError] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
+  const [showToast] = useToast(toastRef);
   const dispatch = useDispatch();
-  const timerRef = useRef();
 
   const resetForm = (e) => {
     setBookForm(defaultBookValues);
@@ -31,29 +32,9 @@ const BookForm = () => {
 
   useEffect(() => {
     if (error) {
-      setShowError(true);
-
-      timerRef.current = setTimeout(() => {
-        setShowError(false);
-      }, 2000);
+      showToast('error', 'Add New Book', error.message);
     }
-
-    return () => {
-      clearTimeout(timerRef);
-    };
-  }, [error]);
-
-  useEffect(() => {
-    if (showSuccess) {
-      timerRef.current = setTimeout(() => {
-        setShowSuccess(false);
-      }, 2000);
-    }
-
-    return () => {
-      clearTimeout(timerRef);
-    };
-  }, [showSuccess]);
+  }, [error, showToast]);
 
   const submitNewBook = (e) => {
     e.preventDefault();
@@ -65,7 +46,7 @@ const BookForm = () => {
         author: newBook.author,
         category: newBook.category,
       })).then(() => {
-        setShowSuccess(true);
+        showToast('success', 'Add New Book', 'New Book Added');
         dispatch(fetchBooks());
       });
       resetForm(e);
@@ -73,27 +54,20 @@ const BookForm = () => {
   };
 
   return (
-    <div className="w-full mt-5 book-form">
-      <h1 className="text-lg">ADD NEW BOOK</h1>
-      <form onSubmit={submitNewBook} className="flex items-center justify-between gap-x-5">
-        <div className="form-group w-[55%]">
+    <div className="w-full py-5 mt-5 book-form">
+      <Toast ref={toastRef} />
+      <h1 className="text-[1.25rem] font-bold text-[#888] font-montserrat">ADD NEW BOOK</h1>
+      <form onSubmit={submitNewBook} className="flex flex-col items-center mt-3 md:flex-row gap-x-5 gap-y-5">
+        <div className="form-group w-full md:w-[40%] lg:w-[41.5rem]">
           <input type="text" className="form-control" id="title" name="title" placeholder="Book title" onChange={(e) => handleChange(e)} required />
         </div>
 
-        <div className="form-group w-[25%]">
+        <div className="form-group w-full md:w-[30%] lg:w-[17.813rem]">
           <input type="text" className="form-control" id="author" name="author" placeholder="Author" onChange={(e) => handleChange(e)} required />
         </div>
 
-        <button type="submit" className="submit-btn border-2 border-black px-5 py-3 w-[20%]">ADD BOOK</button>
+        <button type="submit" className="text-sm font-bold add-book-btn">ADD BOOK</button>
       </form>
-      {
-        showError && <h3 className="mt-3 text-lg text-center text-red-700">{ error && error.message}</h3>
-      }
-
-      {
-        showSuccess && <h3 className="mt-3 text-lg text-center text-green-500">New Book Created</h3>
-      }
-
     </div>
   );
 };

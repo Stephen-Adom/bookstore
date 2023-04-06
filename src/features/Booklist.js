@@ -17,8 +17,8 @@ const Booklist = () => {
   }, [dispatch]);
 
   return (
-    <>
-      <section id="book-list" className="flex items-center flex-col w-full gap-y-4 max-h-[600px] overflow-y-auto px-3 py-2">
+    <section className="divide-y">
+      <section id="book-list" className="flex items-center flex-col w-full gap-y-4 max-h-[600px] overflow-y-auto py-5">
         {
           AllBooks.length ? (
             AllBooks.map((book) => <BookItem key={book.id} book={book} />)
@@ -27,7 +27,7 @@ const Booklist = () => {
 
       </section>
       <BookForm />
-    </>
+    </section>
 
   );
 };
