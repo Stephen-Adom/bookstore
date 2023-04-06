@@ -36,7 +36,8 @@ body {
 }
 
 .nav-link {
-  @apply text-sm;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.813rem;
 }
 
 .nav-link.active {

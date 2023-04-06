@@ -5,7 +5,7 @@ const Navbar = () => (
   <nav className="w-full py-5 bg-white border md:py-5 lg:py-5 navbar">
     <div className="container-fluid flex items-center w-[90%] lg:w-[80%] mx-auto">
       <Link
-        className="navbar-brand text-[1.5rem] md:text-[1.5rem] font-semibold text-primaryBlue"
+        className="navbar-brand text-[1.5rem] md:text-[1.875rem] font-bold font-montserrat text-primaryBlue"
         to="/"
       >
         Bookstore CMS
