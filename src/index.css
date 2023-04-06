@@ -31,7 +31,7 @@ body {
 }
 
 #book-item {
-  padding: 2rem 9.188rem 1.625rem 1.688rem;
+  padding: 1.688rem;
   border-radius: 4px;
 }
 
@@ -41,7 +41,7 @@ body {
 }
 
 .nav-link.active {
-  @apply tracking-widest text-black;
+  @apply tracking-widest text-[#121212];
 }
 
 button {
@@ -51,9 +51,16 @@ button {
 }
 
 .update-progress-btn {
-  @apply w-full lg:w-[11.5rem] h-[2.063rem] px-[1.188rem] py-[0.438rem] mt-1 lg:mt-4 font-light text-white border-2 bg-primaryBlue border-primaryBlue hover:bg-blue-700 hover:border-blue-700 text-sm flex items-center justify-center;
+  @apply w-full lg:w-[11.5rem] h-[2.063rem] px-[1.188rem] py-[0.438rem] mt-1 lg:mt-4 font-light text-white border-2 bg-primaryBlue border-primaryBlue hover:bg-blue-700 hover:border-blue-700 text-[0.813rem] flex items-center justify-center;
 }
 
 .add-book-btn {
   @apply px-[1.188rem] py-[0.801rem] text-white border-2 bg-primaryBlue border-primaryBlue hover:bg-blue-700 hover:border-blue-700 w-[11.5rem] h-[2.813rem] flex items-center justify-center;
+}
+
+@media (min-width: 992px) {
+  #book-item {
+    padding: 2rem 9.188rem 1.625rem 1.688rem;
+    border-radius: 4px;
+  }
 }

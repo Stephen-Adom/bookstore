@@ -13,7 +13,7 @@ const Navbar = () => (
       <ul className="navbar-nav me-auto items-center ml-[50px] gap-10 hidden sm:hidden md:flex lg:flex">
         <li className="nav-item">
           <NavLink
-            className="text-gray-500 nav-link"
+            className="text-gray-400 nav-link"
             aria-current="page"
             to="/"
           >
@@ -21,7 +21,7 @@ const Navbar = () => (
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="text-gray-500 nav-link" to="categories">
+          <NavLink className="text-gray-400 nav-link" to="categories">
             CATEGORIES
           </NavLink>
         </li>

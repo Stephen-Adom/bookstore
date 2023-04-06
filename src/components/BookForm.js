@@ -58,15 +58,15 @@ const BookForm = () => {
       <Toast ref={toastRef} />
       <h1 className="text-[1.25rem] font-bold text-[#888] font-montserrat">ADD NEW BOOK</h1>
       <form onSubmit={submitNewBook} className="flex flex-col items-center mt-3 md:flex-row gap-x-5 gap-y-5">
-        <div className="form-group w-full lg:w-[41.5rem]">
+        <div className="form-group w-full md:w-[40%] lg:w-[41.5rem]">
           <input type="text" className="form-control" id="title" name="title" placeholder="Book title" onChange={(e) => handleChange(e)} required />
         </div>
 
-        <div className="form-group w-full lg:w-[17.813rem]">
+        <div className="form-group w-full md:w-[30%] lg:w-[17.813rem]">
           <input type="text" className="form-control" id="author" name="author" placeholder="Author" onChange={(e) => handleChange(e)} required />
         </div>
 
-        <button type="submit" className="add-book-btn">ADD BOOK</button>
+        <button type="submit" className="text-sm font-bold add-book-btn">ADD BOOK</button>
       </form>
     </div>
   );
