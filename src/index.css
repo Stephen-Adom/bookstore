@@ -1,0 +1,66 @@
+@import "primereact/resources/themes/lara-light-indigo/theme.css";
+@import "primereact/resources/primereact.min.css";
+@import 'react-circular-progressbar/dist/styles.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Poppins', sans-serif, "Ubuntu";
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(250, 250, 250);
+}
+
+.form-control,
+.form-control:focus {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.813rem 1.063rem 0.813rem 1.063rem;
+  font-weight: 400;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  height: 2.813rem;
+  outline: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#book-item {
+  padding: 1.688rem;
+  border-radius: 4px;
+}
+
+.nav-link {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.813rem;
+}
+
+.nav-link.active {
+  @apply tracking-widest text-[#121212];
+}
+
+button {
+  border-radius: 3px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+}
+
+.update-progress-btn {
+  @apply w-full lg:w-[11.5rem] h-[2.063rem] px-[1.188rem] py-[0.438rem] mt-1 lg:mt-4 font-light text-white border-2 bg-primaryBlue border-primaryBlue hover:bg-blue-700 hover:border-blue-700 text-[0.813rem] flex items-center justify-center;
+}
+
+.add-book-btn {
+  @apply px-[1.188rem] py-[0.801rem] text-white border-2 bg-primaryBlue border-primaryBlue hover:bg-blue-700 hover:border-blue-700 w-[11.5rem] h-[2.813rem] flex items-center justify-center;
+}
+
+@media (min-width: 992px) {
+  #book-item {
+    padding: 2rem 9.188rem 1.625rem 1.688rem;
+    border-radius: 4px;
+  }
+}
