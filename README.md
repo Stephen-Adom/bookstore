@@ -24,7 +24,7 @@
 
 # 📖 [BookStore CMS] <a name="about-project"></a>
 
-A bookstore web application is a web application that allows you manage book inventories. Built using HTML, CSS, React, tailwind and JavaScript
+A bookstore web application is a web application that allows you to manage book inventories. Built using HTML, CSS, React, tailwind and JavaScript
 
 ## 🛠 Built With <a name="built-with"></a>
 
